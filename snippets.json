@@ -1,0 +1,29 @@
+{
+  "Create note section": {
+    "prefix": "note",
+    "body": [
+      "# $TM_SELECTED_TEXT$1        <!-- id=${RANDOM_HEX}${RANDOM_HEX}; ct=${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND} -->",
+      "",
+      "$2"
+    ],
+    "description": "Create note"
+  },
+  "TODO task": {
+    "prefix": ["::todo", "task-todo"],
+    "body": [
+      "::TODO::  $TM_SELECTED_TEXT$1"
+    ]
+  },
+  "DOING task": {
+    "prefix":  [ "::doing", "task-progress"],
+    "body": [
+      "::DOING:: $TM_SELECTED_TEXT$1"
+    ]
+  },
+  "DONE task": {
+    "prefix":  ["::done", "task-done"],
+    "body": [
+      "::DONE::  $TM_SELECTED_TEXT$1"
+    ]
+  }
+}

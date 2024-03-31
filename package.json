@@ -1,0 +1,231 @@
+{
+  "name": "sheryv-notes-manager",
+  "displayName": "Sheryv notes manager",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.86.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "sheryv-notes-manager.edit.status.toggle",
+        "title": "Toggle task status",
+        "category": "Sheryv Notes"
+      },
+      {
+        "command": "sheryv-notes-manager.edit.status.toggleExtended",
+        "title": "Toggle task status (All)",
+        "category": "Sheryv Notes"
+      },
+      {
+        "command": "sheryv-notes-manager.foam.prepare-template",
+        "title": "Prepare Foam default note template for this project",
+        "category": "Sheryv Notes"
+      },
+      {
+        "title": "Toggle heading up",
+        "command": "sheryv-notes-manager.edit.style.headUp",
+        "category": "Sheryv Notes"
+      },
+      {
+        "title": "Toggle heading down",
+        "command": "sheryv-notes-manager.edit.style.headDown",
+        "category": "Sheryv Notes"
+      }
+    ],
+    "submenus": [
+      {
+        "id": "sheryv-notes-manager.edit.style",
+        "label": "Style"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "sheryv-notes-manager.foam.prepare-template",
+          "when": "editorLangId == markdown && workspaceFolderCount > 0"
+        }
+      ],
+      "editor/context": [
+        {
+          "when": "editorLangId == markdown && sheryv-notes-manager.context.markdownCommandsActive",
+          "submenu": "sheryv-notes-manager.edit.style",
+          "group": "1_modification"
+        },
+        {
+          "when": "editorLangId == markdown",
+          "command": "sheryv-notes-manager.edit.status.toggle",
+          "group": "1_modification"
+        }
+      ],
+      "sheryv-notes-manager.edit.style": [
+        {
+          "command": "markdown.extension.checkTaskList",
+          "group": "9_other"
+        },
+        {
+          "command": "markdown.extension.editing.toggleBold",
+          "group": "navigation"
+        },
+        {
+          "command": "markdown.extension.editing.toggleItalic",
+          "group": "navigation"
+        },
+        {
+          "command": "markdown.extension.editing.toggleCodeSpan",
+          "group": "navigation"
+        },
+        {
+          "command": "markdown.extension.editing.toggleStrikethrough",
+          "group": "navigation"
+        },
+        {
+          "command": "markdown.extension.editing.toggleList",
+          "group": "navigation"
+        },
+        {
+          "command": "markdown.extension.editing.toggleCodeBlock",
+          "group": "navigation"
+        },
+        {
+          "command": "sheryv-notes-manager.edit.style.headUp",
+          "group": "2"
+        },
+        {
+          "command": "sheryv-notes-manager.edit.style.headDown",
+          "group": "2"
+        },
+        {
+          "command": "markdown.extension.editing.toggleMath",
+          "group": "3"
+        },
+        {
+          "command": "markdown.extension.editing.toggleMathReverse",
+          "group": "3"
+        }
+      ]
+    },
+    "configuration": {
+      "properties": {
+        "sheryv-notes-manager.enableCodeLens": {
+          "type": "boolean",
+          "default": true
+        },
+        "sheryv-notes-manager.enableTagsColoring": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+    "keybindings": [
+      {
+        "command": "markdown.extension.editing.toggleBold",
+        "key": "alt+b",
+        "when": "editorTextFocus && !editorReadonly && editorLangId == markdown && sheryv-notes-manager.context.markdownCommandsActive"
+      },
+      {
+        "command": "markdown.extension.editing.toggleItalic",
+        "key": "alt+i",
+        "when": "editorTextFocus && !editorReadonly && editorLangId == markdown && sheryv-notes-manager.context.markdownCommandsActive"
+      },
+      {
+        "command": "markdown.extension.editing.toggleCodeSpan",
+        "key": "alt+a",
+        "when": "editorTextFocus && !editorReadonly && editorLangId == markdown && sheryv-notes-manager.context.markdownCommandsActive"
+      },
+      {
+        "command": "markdown.extension.editing.toggleCodeBlock",
+        "key": "alt+shift+a",
+        "when": "editorTextFocus && !editorReadonly && editorLangId == markdown && sheryv-notes-manager.context.markdownCommandsActive"
+      },
+      {
+        "command": "markdown.extension.editing.toggleBold",
+        "key": "alt+b",
+        "when": "editorTextFocus && !editorReadonly && editorLangId == markdown && sheryv-notes-manager.context.markdownCommandsActive"
+      },
+      {
+        "command": "sheryv-notes-manager.edit.style.headUp",
+        "key": "alt+oem_comma",
+        "when": "editorTextFocus && !editorReadonly && editorLangId == markdown && sheryv-notes-manager.context.markdownCommandsActive"
+      },
+      {
+        "command": "sheryv-notes-manager.edit.style.headDown",
+        "key": "alt+oem_period",
+        "when": "editorTextFocus && !editorReadonly && editorLangId == markdown && sheryv-notes-manager.context.markdownCommandsActive"
+      },
+      {
+        "command": "sheryv-notes-manager.edit.status.toggle",
+        "key": "ctrl+alt+enter",
+        "mac": "cmd+alt+enter",
+        "when": "editorTextFocus && !editorReadonly && editorLangId == markdown"
+      },
+      {
+        "command": "sheryv-notes-manager.edit.status.toggleExtended",
+        "key": "ctrl+shift+alt+enter",
+        "mac": "cmd+shift+alt+enter",
+        "when": "editorTextFocus && !editorReadonly && editorLangId == markdown"
+      },
+      {
+        "command": "sheryv-notes-manager.edit.status.set",
+        "key": "alt+t",
+        "when": "editorTextFocus && !editorReadonly && editorLangId == markdown"
+      },
+      {
+        "command": "markdown.extension.editing.toggleList",
+        "key": "alt+l",
+        "when": "editorTextFocus && !editorReadonly && editorLangId == markdown && sheryv-notes-manager.context.markdownCommandsActive"
+      },
+      {
+        "key": "alt+k",
+        "command": "editor.action.insertSnippet",
+        "when": "editorTextFocus && !editorReadonly && editorLangId == markdown && sheryv-notes-manager.context.markdownCommandsActive",
+        "args": {
+          "langId": "markdown",
+          "name": "link"
+        }
+      }
+    ],
+    "snippets": [
+      {
+        "language": "markdown",
+        "path": "./snippets.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run prepackage",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "prepackage": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "pnpm run compile-tests && pnpm run compile && pnpm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test",
+    "package": "pnpm vsce package --no-dependencies",
+    "publish": "pnpm vsce publish --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.86.0",
+    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "@typescript-eslint/parser": "^6.19.1",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.9",
+    "@vscode/vsce": "^2.24.0",
+    "eslint": "^8.56.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.3",
+    "webpack": "^5.90.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
