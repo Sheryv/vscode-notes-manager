@@ -1,13 +1,18 @@
 {
   "name": "sheryv-notes-manager",
-  "displayName": "Sheryv notes manager",
+  "displayName": "Sheryv Notes Manager",
   "description": "Help in writing and formatting plain text notes created directly in markdown files",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
+    "type": "git",
     "url": "https://github.com/Sheryv/vscode-notes-manager"
   },
+  "author": {
+    "name": "Sheryv"
+  },
+  "publisher": "Sheryv",
   "engines": {
-    "vscode": "^1.86.0"
+    "vscode": "^1.77.0"
   },
   "categories": [
     "Other"
@@ -219,7 +224,7 @@
   "devDependencies": {
     "@types/mocha": "^10.0.6",
     "@types/node": "18.x",
-    "@types/vscode": "^1.86.0",
+    "@types/vscode": "^1.77.0",
     "@typescript-eslint/eslint-plugin": "^6.19.1",
     "@typescript-eslint/parser": "^6.19.1",
     "@vscode/test-cli": "^0.0.4",
