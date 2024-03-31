@@ -1,8 +1,11 @@
 {
   "name": "sheryv-notes-manager",
   "displayName": "Sheryv notes manager",
-  "description": "",
+  "description": "Help in writing and formatting plain text notes created directly in markdown files",
   "version": "0.0.1",
+  "repository": {
+    "url": "https://github.com/Sheryv/vscode-notes-manager"
+  },
   "engines": {
     "vscode": "^1.86.0"
   },
